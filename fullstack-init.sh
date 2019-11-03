@@ -10,14 +10,16 @@ echo "" &&
 echo "===" &&
 echo "👉 DEVELOPMENT" &&
 echo "  🔥 STEP 1: CHECK ./backend/config/environments/development/database.json" &&
-echo "  👌 STEP 2: CHECK ./frontend/env.development" &&
-echo REACT_APP_API_ENDPOINT=\"http://localhost:3110\" > frontend/env.development &&
+echo "  👌 STEP 2: CHECK ./frontend/.env.development" &&
+echo "REACT_APP_API_ENDPOINT=\"http://localhost:3110\"
+" > frontend/.env.development &&
 echo "  🚀 STEP 3: RUN $ bash dev.sh" &&
 echo "===" &&
 echo "" &&
 echo "👉 PRODUCTION" &&
-echo "  👌 STEP 1: CHECK ./frontend/env.production" &&
-echo REACT_APP_API_ENDPOINT=\"http://localhost:3110\" > frontend/env.production &&
+echo "  👌 STEP 1: CHECK ./frontend/.env.production" &&
+echo "REACT_APP_API_ENDPOINT=\"http://localhost:3110\"
+" > frontend/.env.production &&
 echo "  🔥 STEP 2: CHECK ./ecosystem.config.js" &&
 echo "module.exports = {
   apps : [{
