@@ -25,20 +25,21 @@ echo "module.exports = {
   apps : [{
     name: 'strapi-autoru-3110',
     cwd: '/home/den/projects/autoru-services/backend',
-    script: 'yarn start',
+    script: 'yarn',
+    args: 'start',
     env: {
       PORT: '3110',
       NODE_ENV: 'production',
       DATABASE_HOST: 'ds241968.mlab.com', // database Endpoint under 'Connectivity & Security' tab
       DATABASE_PORT: '41968',
       DATABASE_NAME: 'autoru-services', // DB name under 'Configuration' tab
-      DATABASE_USERNAME: '<USERNAME>', // default username
-      DATABASE_PASSWORD: '<PASSWD>',
+      DATABASE_USERNAME: '<DATABASE_USERNAME>', // default username
+      DATABASE_PASSWORD: '<DATABASE_PASSWORD>',
       DATABASE_AUTHENTICATION_DATABASE: 'autoru-services'
     },
   }],
 };
 " > ecosystem.config.js &&
 echo "  🚀 STEP 3: RUN $ bash build.sh" &&
-echo "  🚀 STEP 4: RUN $ pm2 start"
-
+echo "  🚀 STEP 4: RUN $ pm2 start" &&
+rm -rf fullstack-init.sh

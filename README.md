@@ -14,8 +14,7 @@ Once.
 
 ### `bash dev.sh`
 
-- Backend [localhost:3110](http://localhost:3110)
-- Frontend [localhost:3000](http://localhost:3000)
+> Backend [localhost:3110](http://localhost:3110) / Frontend [localhost:3000](http://localhost:3000)
 
 ## Production
 
@@ -23,22 +22,25 @@ Once.
 
 ### `pm2 start ecosystem.config.js`
 
+> I have installed pm2@3.2.8
+
 _ecosystem.config.js_
 ```js
 module.exports = {
   apps : [{
-    name: 'strapi-autoru-3110',
+    name: '<PROCESS_NAME>',
     cwd: '/home/den/projects/autoru-services/backend',
-    script: 'yarn start',
+    script: 'yarn',
+    args: 'start',
     env: {
-      PORT: '3110',
+      PORT: '<PORT>',
       NODE_ENV: 'production',
-      DATABASE_HOST: 'ds241968.mlab.com', // database Endpoint under 'Connectivity & Security' tab
-      DATABASE_PORT: '',
-      DATABASE_NAME: 'autoru-services',  // DB name under 'Configuration' tab
-      DATABASE_USERNAME: '', // default username
-      DATABASE_PASSWORD: '',
-      DATABASE_AUTHENTICATION_DATABASE: 'autoru-services'
+      DATABASE_HOST: '<DATABASE_HOST>', // database Endpoint under 'Connectivity & Security' tab
+      DATABASE_PORT: '<DATABASE_PORT>',
+      DATABASE_NAME: '<DATABASE_NAME>',  // DB name under 'Configuration' tab
+      DATABASE_USERNAME: '<DATABASE_USERNAME>',
+      DATABASE_PASSWORD: '<DATABASE_PASSWORD>',
+      DATABASE_AUTHENTICATION_DATABASE: '<DATABASE_AUTHENTICATION_DATABASE>'
     },
   }],
 };
