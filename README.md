@@ -28,7 +28,7 @@ module.exports = {
   apps : [{
     name: '<PROCESS_NAME>',
     cwd: '/home/den/projects/autoru-services/backend',
-    script: 'yarn',
+    script: 'yarn.js', // Wtf?? https://github.com/yarnpkg/yarn/issues/3405#issuecomment-301332585
     args: 'start',
     env: {
       PORT: '<PORT>',

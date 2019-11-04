@@ -25,7 +25,7 @@ echo "module.exports = {
   apps : [{
     name: 'strapi-autoru-3110',
     cwd: '/home/den/projects/autoru-services/backend',
-    script: 'yarn',
+    script: 'yarn.js', // Wtf?? https://github.com/yarnpkg/yarn/issues/3405#issuecomment-301332585
     args: 'start',
     env: {
       PORT: '3110',
