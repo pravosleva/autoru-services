@@ -4,11 +4,11 @@
 
 ### `bash fullstack-init.sh`
 
-Your local repo will be killed.
+_Your local repo will be killed._
 
 ### `yarn global add pm2@latest`
 
-Once.
+> I have installed pm2@3.2.8
 
 ## Development
 
@@ -21,8 +21,6 @@ Once.
 ### `bash build.sh`
 
 ### `pm2 start ecosystem.config.js`
-
-> I have installed pm2@3.2.8
 
 _ecosystem.config.js_
 ```js
