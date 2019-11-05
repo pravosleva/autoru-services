@@ -41,5 +41,4 @@ echo "module.exports = {
 };
 " > ecosystem.config.js &&
 echo "  🚀 STEP 3: RUN $ bash build.sh" &&
-echo "  🚀 STEP 4: RUN $ pm2 start" &&
-rm -rf fullstack-init.sh
+echo "  🚀 STEP 4: RUN $ pm2 start" # && rm -rf fullstack-init.sh
