@@ -18,9 +18,11 @@ _I have installed pm2@3.2.8_
 
 ## Production
 
-### `bash build.sh`
+### `bash build-all.sh`
 
-### `pm2 start ecosystem.config.js`
+_Backend will be rebuilt; Frontend will be build and moved to `./backend/public`._
+
+### `pm2 start ecosystem.config.js [--env production]`
 
 > [localhost:3110](http://localhost:3110)
 
@@ -29,15 +31,25 @@ _ecosystem.config.js_
 module.exports = {
   apps : [{
     name: '<PROCESS_NAME>',
-    cwd: '/home/den/projects/autoru-services/backend',
-    script: 'yarn.js', // Wtf?? https://github.com/yarnpkg/yarn/issues/3405#issuecomment-301332585
+    cwd: '/home/<PATH_TO>/backend',
+    script: 'yarn.js', // Wtf? https://github.com/yarnpkg/yarn/issues/3405#issuecomment-301332585
     args: 'start',
     env: {
-      PORT: '<PORT>',
-      NODE_ENV: 'production',
+      PORT: '<PORT>', // Same as ./frontend/.env.development
+      NODE_ENV: 'development',
       DATABASE_HOST: '<DATABASE_HOST>', // database Endpoint under 'Connectivity & Security' tab
       DATABASE_PORT: '<DATABASE_PORT>',
-      DATABASE_NAME: '<DATABASE_NAME>',  // DB name under 'Configuration' tab
+      DATABASE_NAME: '<DATABASE_NAME>', // DB name under 'Configuration' tab
+      DATABASE_USERNAME: '<DATABASE_USERNAME>',
+      DATABASE_PASSWORD: '<DATABASE_PASSWORD>',
+      DATABASE_AUTHENTICATION_DATABASE: '<DATABASE_AUTHENTICATION_DATABASE>'
+    },
+    env_production: {
+      PORT: '<PORT>', // Same as ./frontend/.env.production
+      NODE_ENV: 'production',
+      DATABASE_HOST: '<DATABASE_HOST>',
+      DATABASE_PORT: '<DATABASE_PORT>',
+      DATABASE_NAME: '<DATABASE_NAME>',
       DATABASE_USERNAME: '<DATABASE_USERNAME>',
       DATABASE_PASSWORD: '<DATABASE_PASSWORD>',
       DATABASE_AUTHENTICATION_DATABASE: '<DATABASE_AUTHENTICATION_DATABASE>'
@@ -48,4 +60,4 @@ module.exports = {
 
 ### `bash build-front-only.sh`
 
-_When prod is running._
+_Frontend will be build and moved to `./backend/public`. Could be used when production is running._
