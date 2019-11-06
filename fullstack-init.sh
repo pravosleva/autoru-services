@@ -18,7 +18,7 @@ echo "===" &&
 echo "" &&
 echo "👉 PRODUCTION" &&
 echo "  👌 STEP 1: CHECK ./frontend/.env.production" &&
-echo "REACT_APP_API_ENDPOINT=\"http://localhost:3110\"
+echo "REACT_APP_API_ENDPOINT=\"http://selection4test.ru:3110\"
 " > frontend/.env.production &&
 echo "  🔥 STEP 2: CHECK ./ecosystem.config.js" &&
 echo "module.exports = {

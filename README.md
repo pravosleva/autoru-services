@@ -22,6 +22,8 @@ _I have installed pm2@3.2.8_
 
 ### `pm2 start ecosystem.config.js`
 
+> [localhost:3110](http://localhost:3110)
+
 _ecosystem.config.js_
 ```js
 module.exports = {
