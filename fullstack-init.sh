@@ -8,6 +8,7 @@ git clone https://github.com/pravosleva/autoru-services-backend.git backend &&
 yarn --cwd ./backend &&
 echo "" &&
 echo "===" &&
+echo "" &&
 echo "  DEVELOPMENT MODE: pm2 start ecosystem.config.js" &&
 echo "" &&
 echo "👉 BUT YOU HAVE TO CHECK THIS:" &&
@@ -15,7 +16,8 @@ echo "  🔥 STEP 1: ./backend/config/environments/development/database.json" &&
 echo "  + STEP 2: ./frontend/.env.development" &&
 echo "REACT_APP_API_ENDPOINT=\"http://localhost:3110\"
 " > frontend/.env.development &&
-echo "  🚀 STEP 3: RUN $ bash dev.sh" &&
+echo "  🚀 STEP 3: $ bash dev.sh" &&
+echo "" &&
 echo "===" &&
 echo "" &&
 echo "  PRODUCTION MODE: pm2 start ecosystem.config.js --env production" &&
@@ -55,4 +57,5 @@ echo "module.exports = {
 };
 " > ecosystem.config.js &&
 echo "  🚀 STEP 3: $ bash build.sh" &&
-echo "  🚀 STEP 4: $ pm2 start" # && rm -rf fullstack-init.sh
+echo "  🚀 STEP 4: $ pm2 start" &&
+echo "===" # && rm -rf fullstack-init.sh
