@@ -14,7 +14,9 @@ _I have installed pm2@3.2.8_
 
 ### `bash dev.sh`
 
-> **Check envs!** Backend [localhost:3110](http://localhost:3110) / Frontend [localhost:3000](http://localhost:3000)
+> **Check envs!**
+
+_Backend [localhost:3110](http://localhost:3110) / Frontend [localhost:3000](http://localhost:3000)_
 
 ## Production
 
@@ -26,9 +28,11 @@ _Backend will be rebuilt; Frontend will be build and moved to `./backend/public`
 
 ### `pm2 start ecosystem.config.js [--env production]`
 
-> **Check envs!** [localhost:3110](http://localhost:3110)
+> **Check envs!**
 
-_ecosystem.config.js_
+_[localhost:3110](http://localhost:3110)_
+
+_`ecosystem.config.js` for example_
 ```js
 module.exports = {
   apps : [{
