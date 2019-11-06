@@ -1,2 +1,2 @@
 #!/bin/bash
-yarn --cwd ./frontend build
+REACT_APP_API_ENDPOINT="" yarn --cwd ./frontend build

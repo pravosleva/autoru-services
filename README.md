@@ -14,17 +14,19 @@ _I have installed pm2@3.2.8_
 
 ### `bash dev.sh`
 
-> Backend [localhost:3110](http://localhost:3110) / Frontend [localhost:3000](http://localhost:3000)
+> **Check envs!** Backend [localhost:3110](http://localhost:3110) / Frontend [localhost:3000](http://localhost:3000)
 
 ## Production
 
 ### `bash build-all.sh`
 
+> **Check envs!**
+
 _Backend will be rebuilt; Frontend will be build and moved to `./backend/public`._
 
 ### `pm2 start ecosystem.config.js [--env production]`
 
-> [localhost:3110](http://localhost:3110)
+> **Check envs!** [localhost:3110](http://localhost:3110)
 
 _ecosystem.config.js_
 ```js
@@ -59,5 +61,7 @@ module.exports = {
 ```
 
 ### `bash build-front-only.sh`
+
+> **Check envs!**
 
 _Frontend will be build and moved to `./backend/public`. Could be used when production is running._

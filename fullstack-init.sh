@@ -13,7 +13,7 @@ echo "  DEVELOPMENT MODE: pm2 start ecosystem.config.js" &&
 echo "" &&
 echo "👉 BUT YOU HAVE TO CHECK THIS:" &&
 echo "  🔥 STEP 1: ./backend/config/environments/development/database.json" &&
-echo "  + STEP 2: ./frontend/.env.development" &&
+echo "  -> STEP 2: ./frontend/.env.development" &&
 echo "REACT_APP_API_ENDPOINT=\"http://localhost:3110\"
 " > frontend/.env.development &&
 echo "  🚀 STEP 3: $ bash dev.sh" &&
@@ -23,7 +23,7 @@ echo "" &&
 echo "  PRODUCTION MODE: pm2 start ecosystem.config.js --env production" &&
 echo "" &&
 echo "👉 BUT YOU HAVE TO CHECK THIS:" &&
-echo "  + STEP 1: ./frontend/.env.production" &&
+echo "  -> STEP 1: ./frontend/.env.production" &&
 echo "REACT_APP_API_ENDPOINT=\"http://selection4test.ru:3110\"
 " > frontend/.env.production &&
 echo "  🔥 STEP 2: ./ecosystem.config.js" &&
@@ -46,16 +46,17 @@ echo "module.exports = {
     env_production: {
       NODE_ENV: 'production',
       PORT: '3110',
-      DATABASE_HOST: 'ds241968.mlab.com',
-      DATABASE_PORT: '41968',
-      DATABASE_NAME: 'autoru-services',
+      DATABASE_HOST: 'ds053295.mlab.com',
+      DATABASE_PORT: '53295',
+      DATABASE_NAME: 'autoru-autoservices',
       DATABASE_USERNAME: '<DATABASE_USERNAME>',
       DATABASE_PASSWORD: '<DATABASE_PASSWORD>',
-      DATABASE_AUTHENTICATION_DATABASE: 'autoru-services'
+      DATABASE_AUTHENTICATION_DATABASE: 'autoru-autoservices'
     }
   }],
 };
 " > ecosystem.config.js &&
 echo "  🚀 STEP 3: $ bash build.sh" &&
 echo "  🚀 STEP 4: $ pm2 start" &&
+echo "" &&
 echo "===" # && rm -rf fullstack-init.sh
