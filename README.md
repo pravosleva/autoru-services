@@ -45,3 +45,7 @@ module.exports = {
   }],
 };
 ```
+
+### `bash build-front-only.sh`
+
+_When prod is running._
