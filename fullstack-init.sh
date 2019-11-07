@@ -33,12 +33,22 @@ echo "module.exports = {
       DATABASE_PASSWORD: '<DATABASE_PASSWORD>',
       DATABASE_AUTHENTICATION_DATABASE: 'autoru-autoservices'
     }
+  }, {
+    name: 'strapi-autoru-frontend-3000',
+    cwd: '/home/den/projects/autoru-services/frontend', // ATTENTION!
+    script: 'yarn',
+    args: 'start',
+    interpreter: 'none',
+    env: {
+      NODE_ENV: 'development',
+      PORT: '3000',
+      REACT_APP_API_ENDPOINT: '' // if empty then slash
+    }
   }],
 };
 " > ecosystem.dev.config.js &&
 echo "" &&
-echo "  🚀 WAY 1: $ pm2 start ecosystem.dev.config.js" &&
-echo "  🚀 WAY 2: $ bash dev.sh" &&
+echo "🚀 $ pm2 start ecosystem.dev.config.js" &&
 echo "" &&
 echo "===" &&
 echo "" &&
@@ -70,7 +80,7 @@ echo "module.exports = {
 };
 " > ecosystem.prod.config.js &&
 echo "" &&
-echo "  🚀 $ bash build.sh" &&
-echo "  🚀 $ pm2 start ecosystem.prod.config.js" &&
+echo "🚀 $ bash build-all.sh" &&
+echo "🚀 $ pm2 start ecosystem.prod.config.js" &&
 echo "" &&
 echo "===" # && rm -rf fullstack-init.sh
