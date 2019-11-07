@@ -13,7 +13,7 @@ echo "  DEVELOPMENT" &&
 echo "" &&
 echo "👉 CHECK THIS BEFORE START:" &&
 echo "  🔥 STEP 1: ./frontend/.env.development" &&
-echo "REACT_APP_API_ENDPOINT=\"http://localhost:3110\"
+echo "REACT_APP_API_ENDPOINT=\"\"
 " > frontend/.env.development &&
 echo "  🔥 STEP 2: ./ecosystem.dev.config.js" &&
 echo "module.exports = {
