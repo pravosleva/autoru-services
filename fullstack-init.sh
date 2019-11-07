@@ -12,10 +12,7 @@ echo "" &&
 echo "  DEVELOPMENT" &&
 echo "" &&
 echo "👉 CHECK THIS BEFORE START:" &&
-echo "  🔥 STEP 1: ./frontend/.env.development" &&
-echo "REACT_APP_API_ENDPOINT=\"\"
-" > frontend/.env.development &&
-echo "  🔥 STEP 2: ./ecosystem.dev.config.js" &&
+echo "  🔥 STEP 1: ./ecosystem.dev.config.js" &&
 echo "module.exports = {
   apps : [{
     name: 'strapi-autoru-3110',
@@ -42,11 +39,14 @@ echo "module.exports = {
     env: {
       NODE_ENV: 'development',
       PORT: '3000',
-      REACT_APP_API_ENDPOINT: '' // if empty then slash
+      REACT_APP_API_ENDPOINT: 'http://localhost:3110'
     }
   }],
 };
 " > ecosystem.dev.config.js &&
+echo "  🔥 STEP 2 (if you dont use pm2): ./frontend/.env.development" &&
+echo "REACT_APP_API_ENDPOINT=\"http://localhost:3110\"
+" > frontend/.env.development &&
 echo "" &&
 echo "🚀 $ pm2 start ecosystem.dev.config.js" &&
 echo "" &&
