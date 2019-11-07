@@ -9,54 +9,68 @@ yarn --cwd ./backend &&
 echo "" &&
 echo "===" &&
 echo "" &&
-echo "  DEVELOPMENT MODE: pm2 start ecosystem.config.js" &&
+echo "  DEVELOPMENT" &&
 echo "" &&
-echo "👉 BUT YOU HAVE TO CHECK THIS:" &&
-echo "  🔥 STEP 1: ./backend/config/environments/development/database.json" &&
-echo "  -> STEP 2: ./frontend/.env.development" &&
+echo "👉 CHECK THIS BEFORE START:" &&
+echo "  🔥 STEP 1: ./frontend/.env.development" &&
 echo "REACT_APP_API_ENDPOINT=\"http://localhost:3110\"
 " > frontend/.env.development &&
-echo "  🚀 STEP 3: $ bash dev.sh" &&
-echo "" &&
-echo "===" &&
-echo "" &&
-echo "  PRODUCTION MODE: pm2 start ecosystem.config.js --env production" &&
-echo "" &&
-echo "👉 BUT YOU HAVE TO CHECK THIS:" &&
-echo "  -> STEP 1: ./frontend/.env.production" &&
-echo "REACT_APP_API_ENDPOINT=\"http://selection4test.ru:3110\"
-" > frontend/.env.production &&
-echo "  🔥 STEP 2: ./ecosystem.config.js" &&
+echo "  🔥 STEP 2: ./ecosystem.dev.config.js" &&
 echo "module.exports = {
   apps : [{
     name: 'strapi-autoru-3110',
     cwd: '/home/den/projects/autoru-services/backend', // ATTENTION!
-    script: 'yarn.js', // Wtf? https://github.com/yarnpkg/yarn/issues/3405#issuecomment-301332585
+    script: 'yarn',
     args: 'start',
+    interpreter: 'none',
     env: {
       NODE_ENV: 'development',
       PORT: '3110',
-      DATABASE_HOST: 'ds241968.mlab.com', // database Endpoint under 'Connectivity & Security' tab
-      DATABASE_PORT: '41968',
-      DATABASE_NAME: 'autoru-services', // DB name under 'Configuration' tab
-      DATABASE_USERNAME: '<DATABASE_USERNAME>', // default username
-      DATABASE_PASSWORD: '<DATABASE_PASSWORD>',
-      DATABASE_AUTHENTICATION_DATABASE: 'autoru-services'
-    },
-    env_production: {
-      NODE_ENV: 'production',
-      PORT: '3110',
-      DATABASE_HOST: 'ds053295.mlab.com',
+      DATABASE_HOST: 'ds053295.mlab.com', // database Endpoint under 'Connectivity & Security' tab
       DATABASE_PORT: '53295',
-      DATABASE_NAME: 'autoru-autoservices',
-      DATABASE_USERNAME: '<DATABASE_USERNAME>',
+      DATABASE_NAME: 'autoru-autoservices', // DB name under 'Configuration' tab
+      DATABASE_USERNAME: '<DATABASE_USERNAME>', // default username
       DATABASE_PASSWORD: '<DATABASE_PASSWORD>',
       DATABASE_AUTHENTICATION_DATABASE: 'autoru-autoservices'
     }
   }],
 };
-" > ecosystem.config.js &&
-echo "  🚀 STEP 3: $ bash build.sh" &&
-echo "  🚀 STEP 4: $ pm2 start" &&
+" > ecosystem.dev.config.js &&
+echo "" &&
+echo "  🚀 WAY 1: $ pm2 start ecosystem.dev.config.js" &&
+echo "  🚀 WAY 2: $ bash dev.sh" &&
+echo "" &&
+echo "===" &&
+echo "" &&
+echo "  PRODUCTION" &&
+echo "" &&
+echo "👉 CHECK THIS BEFORE START:" &&
+echo "  🔥 STEP 1: ./frontend/.env.production" &&
+echo "REACT_APP_API_ENDPOINT=\"http://selection4test.ru:3110\"
+" > frontend/.env.production &&
+echo "  🔥 STEP 2: ./ecosystem.prod.config.js" &&
+echo "module.exports = {
+  apps : [{
+    name: 'strapi-autoru-3110',
+    cwd: '/home/den/projects/autoru-services/backend', // ATTENTION!
+    script: 'yarn',
+    args: 'start',
+    interpreter: 'none',
+    env: {
+      NODE_ENV: 'production',
+      PORT: '3110',
+      DATABASE_HOST: 'ds053295.mlab.com', // database Endpoint under 'Connectivity & Security' tab
+      DATABASE_PORT: '53295',
+      DATABASE_NAME: 'autoru-autoservices', // DB name under 'Configuration' tab
+      DATABASE_USERNAME: '<DATABASE_USERNAME>', // default username
+      DATABASE_PASSWORD: '<DATABASE_PASSWORD>',
+      DATABASE_AUTHENTICATION_DATABASE: 'autoru-autoservices'
+    }
+  }],
+};
+" > ecosystem.prod.config.js &&
+echo "" &&
+echo "  🚀 $ bash build.sh" &&
+echo "  🚀 $ pm2 start ecosystem.prod.config.js" &&
 echo "" &&
 echo "===" # && rm -rf fullstack-init.sh
