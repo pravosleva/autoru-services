@@ -12,7 +12,7 @@ _I have installed pm2@4.1.2_
 
 ## Development
 
-### WAY 2: `pm2 start ecosystem.dev.config.js`
+### `pm2 start ecosystem.dev.config.js`
 
 > **Check envs!**
 
