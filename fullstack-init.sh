@@ -18,17 +18,17 @@ echo "module.exports = {
     name: 'strapi-autoru-3110',
     cwd: '/home/den/projects/autoru-services/backend', // ATTENTION!
     script: 'yarn',
-    args: 'start',
+    args: 'develop',
     interpreter: 'none',
     env: {
       NODE_ENV: 'development',
       PORT: '3110',
-      DATABASE_HOST: 'ds053295.mlab.com', // database Endpoint under 'Connectivity & Security' tab
-      DATABASE_PORT: '53295',
-      DATABASE_NAME: 'autoru-autoservices', // DB name under 'Configuration' tab
-      DATABASE_USERNAME: '<DATABASE_USERNAME>', // default username
+      DATABASE_HOST: 'ds017584.mlab.com',
+      DATABASE_PORT: '17584',
+      DATABASE_NAME: 'autoservices-tst-db',
+      DATABASE_USERNAME: '<DATABASE_USERNAME>',
       DATABASE_PASSWORD: '<DATABASE_PASSWORD>',
-      DATABASE_AUTHENTICATION_DATABASE: 'autoru-autoservices'
+      DATABASE_AUTHENTICATION_DATABASE: 'autoservices-tst-db'
     }
   }, {
     name: 'strapi-autoru-frontend-3000',
@@ -69,12 +69,12 @@ echo "module.exports = {
     env: {
       NODE_ENV: 'production',
       PORT: '3110',
-      DATABASE_HOST: 'ds053295.mlab.com', // database Endpoint under 'Connectivity & Security' tab
-      DATABASE_PORT: '53295',
-      DATABASE_NAME: 'autoru-autoservices', // DB name under 'Configuration' tab
-      DATABASE_USERNAME: '<DATABASE_USERNAME>', // default username
+      DATABASE_HOST: 'ds017584.mlab.com',
+      DATABASE_PORT: '17584',
+      DATABASE_NAME: 'autoservices-tst-db',
+      DATABASE_USERNAME: '<DATABASE_USERNAME>',
       DATABASE_PASSWORD: '<DATABASE_PASSWORD>',
-      DATABASE_AUTHENTICATION_DATABASE: 'autoru-autoservices'
+      DATABASE_AUTHENTICATION_DATABASE: 'autoservices-tst-db'
     }
   }],
 };

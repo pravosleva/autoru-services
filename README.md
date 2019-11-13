@@ -22,23 +22,23 @@ _`ecosystem.dev.config.js` for example:_
 ```js
 module.exports = {
   apps : [{
-    name: '<PROCESS_NAME>',
+    name: '<PM2_PROCESS_NAME>',
     cwd: '/home/<PATH_TO>/backend', // ATTENTION!
     script: 'yarn',
-    args: 'start',
+    args: 'develop',
     interpreter: 'none',
     env: {
       PORT: '<PORT>', // Same as ./frontend/.env.development
       NODE_ENV: 'development',
-      DATABASE_HOST: '<DATABASE_HOST>', // database Endpoint under 'Connectivity & Security' tab
+      DATABASE_HOST: '<DATABASE_HOST>',
       DATABASE_PORT: '<DATABASE_PORT>',
-      DATABASE_NAME: '<DATABASE_NAME>', // DB name under 'Configuration' tab
+      DATABASE_NAME: '<DATABASE_NAME>',
       DATABASE_USERNAME: '<DATABASE_USERNAME>',
       DATABASE_PASSWORD: '<DATABASE_PASSWORD>',
       DATABASE_AUTHENTICATION_DATABASE: '<DATABASE_AUTHENTICATION_DATABASE>'
     }
   }, {
-    name: '<PROCESS_NAME>',
+    name: '<PM2_PROCESS_NAME>',
     cwd: '/home/<PATH_TO>/frontend', // ATTENTION!
     script: 'yarn',
     args: 'start',
@@ -46,7 +46,7 @@ module.exports = {
     env: {
       NODE_ENV: 'development',
       PORT: '3000',
-      REACT_APP_API_ENDPOINT: '' // if empty then slash
+      REACT_APP_API_ENDPOINT: 'http://localhost:3110'
     }
   }],
 };
@@ -70,7 +70,7 @@ _`ecosystem.prod.config.js` for example:_
 ```js
 module.exports = {
   apps : [{
-    name: '<PROCESS_NAME>',
+    name: '<PM2_PROCESS_NAME>',
     cwd: '/home/<PATH_TO>/backend',
     script: 'yarn',
     args: 'start',
