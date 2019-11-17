@@ -16,7 +16,7 @@ echo "  🔥 STEP 1: ./ecosystem.dev.config.js" &&
 echo "module.exports = {
   apps : [{
     name: 'strapi-autoru-3110',
-    cwd: `${__dirname}/backend`,
+    cwd: __dirname + '/backend',
     script: 'yarn',
     args: 'develop',
     interpreter: 'none',
@@ -32,7 +32,7 @@ echo "module.exports = {
     }
   }, {
     name: 'strapi-autoru-frontend-3000',
-    cwd: `${__dirname}/frontend`,
+    cwd: __dirname + '/frontend',
     script: 'yarn',
     args: 'start',
     interpreter: 'none',
@@ -62,7 +62,7 @@ echo "  🔥 STEP 2: ./ecosystem.prod.config.js" &&
 echo "module.exports = {
   apps : [{
     name: 'strapi-autoru-3110',
-    cwd: `${__dirname}/backend`,
+    cwd: __dirname + '/backend',
     script: 'yarn',
     args: 'start',
     interpreter: 'none',
