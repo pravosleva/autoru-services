@@ -2,9 +2,9 @@
 rm -rf .git/ &&
 rm -rf .gitignore &&
 rm -rf README.md &&
-git clone https://github.com/pravosleva/get-money-frontend.git frontend &&
+git clone https://github.com/pravosleva/autoru-services-frontend.git frontend &&
 yarn --cwd ./frontend &&
-git clone https://github.com/pravosleva/get-money-backend.git backend &&
+git clone https://github.com/pravosleva/autoru-services-backend.git backend &&
 yarn --cwd ./backend &&
 echo "" &&
 echo "===" &&
@@ -23,12 +23,12 @@ echo "module.exports = {
     env: {
       NODE_ENV: 'development',
       PORT: '3110',
-      DATABASE_HOST: 'ds347298.mlab.com',
-      DATABASE_PORT: '47298',
-      DATABASE_NAME: 'get-money-2019',
+      DATABASE_HOST: 'ds017584.mlab.com',
+      DATABASE_PORT: '17584',
+      DATABASE_NAME: 'autoservices-tst-db',
       DATABASE_USERNAME: '<DATABASE_USERNAME>',
       DATABASE_PASSWORD: '<DATABASE_PASSWORD>',
-      DATABASE_AUTHENTICATION_DATABASE: 'get-money-2019'
+      DATABASE_AUTHENTICATION_DATABASE: 'autoservices-tst-db'
     }
   }, {
     name: 'strapi-autoru-frontend-3000',
@@ -69,12 +69,12 @@ echo "module.exports = {
     env: {
       NODE_ENV: 'production',
       PORT: '3110',
-      DATABASE_HOST: 'ds347298.mlab.com',
-      DATABASE_PORT: '47298',
-      DATABASE_NAME: 'get-money-2019',
+      DATABASE_HOST: 'ds017584.mlab.com',
+      DATABASE_PORT: '17584',
+      DATABASE_NAME: 'autoservices-tst-db',
       DATABASE_USERNAME: '<DATABASE_USERNAME>',
       DATABASE_PASSWORD: '<DATABASE_PASSWORD>',
-      DATABASE_AUTHENTICATION_DATABASE: 'get-money-2019'
+      DATABASE_AUTHENTICATION_DATABASE: 'autoservices-tst-db'
     }
   }],
 };
